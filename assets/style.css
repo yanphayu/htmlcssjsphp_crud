@@ -1,0 +1,295 @@
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "JetBrainsMono NF", monospace;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem;
+  background: red;
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  z-index: 1000;
+}
+
+.box {
+  width: 70%;
+  margin: auto;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+#btnAdd {
+  margin-top: 10rem;
+  border: none;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  color: white;
+  background-color: red;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btnAdd:active {
+  transform: scale(0.98);
+}
+#btnAdd:hover {
+  background-color: rgba(255, 0, 0, 0.801);
+}
+
+.container {
+  width: 70%;
+  max-height: 600px;
+  margin: 2rem auto 0;
+  overflow-y: auto;
+  box-shadow: 0 0 10px 3px rgba(128, 128, 128, 0.548);
+  border-radius: 1rem;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 1.6rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid black;
+  padding: 1rem;
+  text-align: center;
+  cursor: default;
+}
+
+th {
+  position: sticky;
+  top: 0;
+  background: red;
+  color: white;
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+td button {
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+td button:active {
+  transform: scale(0.98);
+}
+
+td button:nth-child(1) {
+  background-color: dodgerblue;
+  color: white;
+}
+
+td button:nth-child(2) {
+  background-color: gold;
+  color: white;
+}
+
+td button:nth-child(3) {
+  background-color: red;
+  color: white;
+}
+
+td button:nth-child(1):hover {
+  background-color: rgba(30, 143, 255, 0.8);
+  color: white;
+}
+
+td button:nth-child(2):hover {
+  background-color: rgba(255, 217, 0, 0.8);
+  color: white;
+}
+
+td button:nth-child(3):hover {
+  background-color: rgba(255, 0, 0, 0.8);
+  color: white;
+}
+
+td button img {
+  width: 1.8rem;
+}
+
+img {
+  border-radius: 50%;
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+}
+
+.spin {
+  display: table-row;
+}
+
+.spin td {
+  text-align: center;
+}
+
+.spin td div {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 auto;
+  border: 3px solid red;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  animation: spin-pulse 1s linear infinite;
+}
+
+@keyframes spin-pulse {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.modal {
+  display: none;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.388);
+
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.showModal {
+  display: flex !important;
+}
+
+.modal form {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.492);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.modal form .form-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+}
+
+.modal form .form-content .input-group {
+  float: 1;
+}
+
+.modal form h2 {
+  font-size: 3rem;
+}
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 0.5rem;
+}
+.input-group label {
+  font-size: 2rem;
+}
+.input-group input {
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  outline: none;
+  border: 1px solid rgb(255, 0, 0);
+  caret-shape: block;
+  caret-color: rgba(255, 0, 0, 0.336);
+}
+.input-group img {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 0;
+}
+input::file-selector-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+input::file-selector-button:active {
+  transform: scale(0.98);
+}
+input::file-selector-button:hover {
+  background-color: rgba(255, 0, 0, 0.801);
+}
+
+.form-content-button {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+}
+.form-content-button button {
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: white;
+  background-color: red;
+  cursor: pointer;
+}
+.form-content-button button:first-child{
+    background-color: gray;
+}
+
+.form-content-button button:first-child:active {
+  transform: scale(0.98);
+}
+.form-content-button button:first-child:hover {
+  background-color: rgba(128, 128, 128, 0.8);
+}
+
+.form-content-button button:active {
+  transform: scale(0.98);
+}
+.form-content-button button:hover {
+  background-color: rgba(255, 0, 0, 0.801);
+}
